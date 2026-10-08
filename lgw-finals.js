@@ -768,3 +768,102 @@
     init();
   }
 })();
+document.addEventListener('click', function(e){
+
+    if(!e.target.classList.contains('lgw-finals-start-timer')){
+        return;
+    }
+
+    var mid = e.target.dataset.mid;
+
+    var endTime =
+        Date.now() +
+        (3 * 60 * 60 * 1000) +
+        (15 * 60 * 1000);
+
+    localStorage.setItem(
+        'lgwTimer_' + mid,
+        endTime
+    );
+
+    startFinalTimer(mid);
+});
+function startFinalTimer(mid){
+
+    var display =
+        document.getElementById(
+            'timer-' + mid
+        );
+
+    if(!display){
+        return;
+    }
+
+    var timer =
+        localStorage.getItem(
+            'lgwTimer_' + mid
+        );
+
+    if(!timer){
+        return;
+    }
+
+    timer = parseInt(timer);
+
+    setInterval(function(){
+
+        var remaining =
+            timer - Date.now();
+
+        if(remaining <= 0){
+
+            display.innerHTML =
+                'TIME EXPIRED';
+
+            return;
+        }
+
+        var hours =
+            Math.floor(remaining / 3600000);
+
+        var mins =
+            Math.floor(
+                (remaining % 3600000)
+                / 60000
+            );
+
+        var secs =
+            Math.floor(
+                (remaining % 60000)
+                / 1000
+            );
+
+        display.innerHTML =
+            String(hours).padStart(2,'0')
+            + ':'
+            + String(mins).padStart(2,'0')
+            + ':'
+            + String(secs).padStart(2,'0');
+
+    },1000);
+}
+window.addEventListener('load', function(){
+
+    document
+        .querySelectorAll('.lgw-finals-timer')
+        .forEach(function(el){
+
+            var mid =
+                el.dataset.mid;
+
+            if(
+                localStorage.getItem(
+                    'lgwTimer_' + mid
+                )
+            ){
+                startFinalTimer(mid);
+            }
+
+        });
+
+});
