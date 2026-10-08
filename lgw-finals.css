@@ -938,3 +938,30 @@
 }
 .lgw-finals-cond-status { font-size: 12px; color: #64748b; }
 .lgw-finals-led--upcoming .lgw-finals-led-num { color: #46586a; text-shadow: none; }
+.lgw-finals-timer{
+    text-align:center;
+    margin:10px 0;
+}
+
+.lgw-finals-timer-display{
+    font-size:22px;
+    font-weight:700;
+    color:#fff;
+    background:#222;
+    border-radius:6px;
+    padding:8px;
+    margin-bottom:8px;
+}
+
+.lgw-finals-start-timer{
+    background:#008000;
+    color:#fff;
+    border:none;
+    padding:8px 14px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.lgw-finals-start-timer:hover{
+    background:#006600;
+}
