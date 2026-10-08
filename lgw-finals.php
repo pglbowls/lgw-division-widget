@@ -659,6 +659,22 @@ function lgw_finals_shortcode($atts) {
             </span>
             <span class="lgw-finals-led-num" data-side="away" id="lgw-led-<?php echo esc_attr($bm['mid']); ?>-a"><?php echo esc_html($led($bm['as'])); ?></span>
           </div>
+            <div class="lgw-finals-timer"
+     data-mid="<?php echo esc_attr($bm['mid']); ?>">
+
+    <div class="lgw-finals-timer-display"
+         id="timer-<?php echo esc_attr($bm['mid']); ?>">
+        03:15:00
+    </div>
+
+    <?php if ($is_admin): ?>
+        <button class="lgw-finals-start-timer"
+                data-mid="<?php echo esc_attr($bm['mid']); ?>">
+            ▶ Start Timer
+        </button>
+    <?php endif; ?>
+
+</div>
           <div class="lgw-finals-led-foot">
             <span class="lgw-finals-led-status" id="lgw-led-<?php echo esc_attr($bm['mid']); ?>-s">
               <?php
