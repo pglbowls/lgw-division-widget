@@ -299,6 +299,7 @@ function lgw_finals_shortcode($atts) {
         <button type="button" class="lgw-finals-sort-btn" data-sort="date">By date &amp; rink</button>
         <button type="button" class="lgw-finals-sort-btn" data-sort="board">📟 Scoreboard</button>
         <button type="button" class="lgw-finals-sort-btn" data-sort="conditions">📜 Conditions of Play</button>
+         <button type="button" class="lgw-finals-sort-btn" data-sort="shield">Centenary Shield</button>
       </div>
 
       <?php $flat_matches = array(); $board_matches = array(); ?>
