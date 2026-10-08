@@ -673,7 +673,9 @@ function lgw_finals_shortcode($atts) {
             ▶ Start Timer
         </button>
     <?php endif; ?>
-
+</div>
+            <div style="background:red;color:white;padding:10px;">
+TIMER TEST
 </div>
           <div class="lgw-finals-led-foot">
             <span class="lgw-finals-led-status" id="lgw-led-<?php echo esc_attr($bm['mid']); ?>-s">
